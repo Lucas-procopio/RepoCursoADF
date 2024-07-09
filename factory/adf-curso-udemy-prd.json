@@ -1,0 +1,9 @@
+{
+	"name": "adf-curso-udemy-prd",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3960f754-0843-4922-8b11-3d86d8e23208",
+		"tenantId": "9fd093ce-f0fb-432f-935a-267f98ca5479"
+	}
+}
