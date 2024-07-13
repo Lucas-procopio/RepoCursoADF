@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "ds_csvTxt_local",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "FileServer1",
