@@ -42,6 +42,10 @@
 		"FileServer1_properties_typeProperties_userId": {
 			"type": "string",
 			"defaultValue": "lsprocopio"
+		},
+		"tr_storage_events_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/2d42a5c3-5533-450e-843b-8877115c2134/resourceGroups/rg-curso-udemy/providers/Microsoft.Storage/storageAccounts/dlsudemyprd"
 		}
 	},
 	"variables": {
@@ -2254,6 +2258,38 @@
 				"annotations": []
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tr_storage_events')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pratica_05",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/csvfiles/blobs/cidadesTrigger",
+					"blobPathEndsWith": ".csv",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('tr_storage_events_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated",
+						"Microsoft.Storage.BlobDeleted"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pratica_05')]"
+			]
 		}
 	]
 }

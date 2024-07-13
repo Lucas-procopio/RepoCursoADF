@@ -43,6 +43,10 @@
 			"type": "string",
 			"defaultValue": "lsprocopio"
 		},
+		"tr_storage_events_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/2d42a5c3-5533-450e-843b-8877115c2134/resourceGroups/rg-curso-udemy/providers/Microsoft.Storage/storageAccounts/dlsudemyprd"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -96,6 +100,9 @@
 					},
 					"FileServer1_properties_typeProperties_userId": {
 						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
+					},
+					"tr_storage_events_properties_typeProperties_scope": {
+						"value": "[parameters('tr_storage_events_properties_typeProperties_scope')]"
 					}
 				}
 			},

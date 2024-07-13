@@ -31,6 +31,9 @@
 		},
 		"FileServer1_properties_typeProperties_userId": {
 			"value": "lsprocopio"
+		},
+		"tr_storage_events_properties_typeProperties_scope": {
+			"value": "/subscriptions/2d42a5c3-5533-450e-843b-8877115c2134/resourceGroups/rg-curso-udemy/providers/Microsoft.Storage/storageAccounts/dlsudemyprd"
 		}
 	}
 }
