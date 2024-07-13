@@ -8,6 +8,9 @@
 		"parameters": {
 			"fileName": {
 				"type": "string"
+			},
+			"fileSeparator": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -20,7 +23,10 @@
 					"type": "Expression"
 				}
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": {
+				"value": "@dataset().fileSeparator",
+				"type": "Expression"
+			},
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
